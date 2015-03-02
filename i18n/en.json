@@ -1,0 +1,8 @@
+{
+  "login_title": "Log In",
+  "login_username": "Username",
+  "login_password": "Password",
+  "login_clear": "Clear",
+  "login_login": "Login",
+  "login_invalid_credentials": "Invalid username or password."
+}

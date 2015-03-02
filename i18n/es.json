@@ -1,0 +1,8 @@
+{
+  "login_title": "Inicie Sesión",
+  "login_username": "Usuario",
+  "login_password": "Contraseña",
+  "login_clear": "Limpiar",
+  "login_login": "Iniciar Sesión",
+  "login_invalid_credentials": "Usuario o contraseña inválidos."
+}

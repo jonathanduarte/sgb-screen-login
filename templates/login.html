@@ -1,0 +1,14 @@
+<ion-view translate-attr-view-title="login_title">
+    <ion-content class="padding">
+        <label class="item item-input">
+            <span class="input-label" translate>login_username</span>
+            <input type="text" data-ng-model="login.username" />
+        </label>
+        <label class="item item-input">
+            <span class="input-label" translate>login_password</span>
+            <input type="password" data-ng-model="login.password" />
+        </label>
+        <button class="button" type="button" data-ng-click="clearFields()" translate>login_clear</button>
+        <button class="button" type="button" data-ng-click="doLogin()" translate>login_login</button>
+    </ion-content>
+</ion-view>
