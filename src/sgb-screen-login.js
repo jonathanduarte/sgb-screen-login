@@ -36,7 +36,9 @@ angular.module('sgb-screen-login', ['megazord'])
                         }});
                     }
                     else {
-                        alert($translate('login_invalid_credentials'));
+                        $translate('login_invalid_credentials').then(function(message){
+                            alert(message);
+                        });
                     }
                 });
         };
