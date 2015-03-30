@@ -11,7 +11,7 @@ angular.module('sgb-screen-login', ['megazord'])
 
         var loginHandler;
         if(_screenParams.loginHandler) {
-            loginHandler = $stateParams.loginHandler;
+            loginHandler = _screenParams.loginHandler;
         }
         else {
             loginHandler = defaultLoginHandler;
