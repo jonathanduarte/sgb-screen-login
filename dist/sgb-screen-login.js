@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('sgb-screen-login', ['megazord'])
-    .controller('sgb-screen-login-controller', ['router', '$injector', '$stateParams', '$scope', '$translate', '$q', function(router, $injector, $stateParams, $scope, $translate, $q){
+    .controller('sgb-screen-login-controller', ['_router', '_screenParams', '$injector', '$stateParams', '$scope', '$translate', '$q', function(router, $injector, $stateParams, $scope, $translate, $q){
         var defaultLoginHandler = function(username, password) {
             //TODO: Default to rest api call instead of this dummy implementation
             var result = $q.defer();
@@ -11,7 +11,7 @@ angular.module('sgb-screen-login', ['megazord'])
         };
 
         var loginHandler;
-        if($stateParams.loginHandler) {
+        if(_screenParams.loginHandler) {
             loginHandler = $stateParams.loginHandler;
         }
         else {
