@@ -29,6 +29,7 @@ angular.module('sgb-screen-login', ['megazord'])
 
         $scope.doLogin = function() {
             //Validate username and password (if needed)
+            console.log('username val is ' + _screenParams.usernameValidation);
             if(_screenParams.usernameValidation) {
                 var exp = new RegExp(_screenParams.usernameValidation);
                 if(!exp.test($scope.login.username)) {
@@ -44,7 +45,6 @@ angular.module('sgb-screen-login', ['megazord'])
                     return;
                 }
             }
-
 
             $injector.invoke(loginHandler, null, { username: $scope.login.username, password: $scope.login.password })
                 .then(function(result){
