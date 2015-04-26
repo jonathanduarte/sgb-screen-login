@@ -3,6 +3,8 @@
 
 angular.module('sgb-screen-login', ['megazord'])
     .controller('sgb-screen-login-controller', ['_router', '_screenParams', '$injector', '$stateParams', '$scope', '$translate', '$q', function(router, _screenParams, $injector, $stateParams, $scope, $translate, $q){
+        $scope.title = _screenParams.title || 'login_title';
+
         var defaultLoginHandler = function(username, password) {
             //TODO: Default to rest api call instead of this dummy implementation
             var result = $q.defer();
