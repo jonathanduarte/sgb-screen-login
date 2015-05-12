@@ -1,24 +1,30 @@
-<ion-view view-title="{{ title | translate }}" class="loginBackground">
+<ion-view view-title="{{ title | translate }}" class="loginBackground" hide-nav-bar="true">
     <ion-content class="padding">
-        <div>
-            <img ng-src="../resources/login.png" align="center">
+        <div class="row row-center" ng-show="companyLogo">
+            <div class="col">
+                <img ng-src="../resources/login.png" width="200px">
+            </div>
         </div>
-        <div>
+        <div class="row row-center" ng-show="userPassFields">
             <label class="item item-input">
                 <span class="input-label" translate="login_username"></span>
                 <input type="text" data-ng-model="login.username" />
             </label>
+        </div>
+        <div class="row row-center" ng-show="userPassFields">
             <label class="item item-input">
                 <span class="input-label" translate="login_password"></span>
                 <input type="password" data-ng-model="login.password" />
             </label>
         </div>
-        <div>
+        <div class="row row-center" ng-show="clearSubmitButtons">
             <button class="button" type="button" data-ng-click="clearFields()" translate="login_clear"></button>
             <button class="button" type="button" data-ng-click="doLogin()" translate="login_login"></button>
         </div>
-        <div>
-            <button class="button" type="button" data-ng-click="enter()" translate="login_enter"></button>
+        <div class="row row-center" ng-show="enterButton">
+            <div class="col">
+                <button class="buttonEnter" type="button" data-ng-click="enter()" translate="login_enter"></button>
+            </div>
         </div>
     </ion-content>
 </ion-view>
