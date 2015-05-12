@@ -4,6 +4,7 @@
   "login_password": "Contraseña",
   "login_clear": "Limpiar",
   "login_login": "Iniciar Sesión",
+  "login_enter": "Entrar",
   "login_invalid_credentials": "Usuario o contraseña inválidos.",
   "login_invalid_username": "Usuario inválido.",
   "login_invalid_password": "Contraseña inválida."

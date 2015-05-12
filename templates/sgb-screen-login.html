@@ -1,14 +1,24 @@
-<ion-view view-title="{{ title | translate }}">
+<ion-view view-title="{{ title | translate }}" class="loginBackgroud">
     <ion-content class="padding">
-        <label class="item item-input">
-            <span class="input-label" translate>login_username</span>
-            <input type="text" data-ng-model="login.username" />
-        </label>
-        <label class="item item-input">
-            <span class="input-label" translate>login_password</span>
-            <input type="password" data-ng-model="login.password" />
-        </label>
-        <button class="button" type="button" data-ng-click="clearFields()" translate>login_clear</button>
-        <button class="button" type="button" data-ng-click="doLogin()" translate>login_login</button>
+        <div ng-show="config.companyLogo">
+            <img ng-src="../resources/login.png" align="center">
+        </div>
+        <div ng-show="config.userPassFields">
+            <label class="item item-input">
+                <span class="input-label" translate="login_username"></span>
+                <input type="text" data-ng-model="login.username" />
+            </label>
+            <label class="item item-input">
+                <span class="input-label" translate="login_password"></span>
+                <input type="password" data-ng-model="login.password" />
+            </label>
+        </div>
+        <div ng-show="config.clearSubmitButtons">
+            <button class="button" type="button" data-ng-click="clearFields()" translate="login_clear"></button>
+            <button class="button" type="button" data-ng-click="doLogin()" translate="login_login"></button>
+        </div>
+        <div ng-show="config.enterButton">
+            <button class="button" type="button" data-ng-click="enter()" translate="login_enter"></button>
+        </div>
     </ion-content>
 </ion-view>

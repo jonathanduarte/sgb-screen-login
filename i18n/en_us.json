@@ -4,6 +4,7 @@
   "login_password": "Password",
   "login_clear": "Clear",
   "login_login": "Login",
+  "login_enter": "Enter",
   "login_invalid_credentials": "Invalid username or password.",
   "login_invalid_username": "Invalid username.",
   "login_invalid_password": "Invalid password."
