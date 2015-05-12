@@ -4,10 +4,7 @@
 angular.module('sgb-screen-login', ['megazord'])
     .controller('sgb-screen-login-controller', ['_router', '_screenParams', '$injector', '$stateParams', '$scope', '$translate', '$q', function(router, _screenParams, $injector, $stateParams, $scope, $translate, $q){
         $scope.title = _screenParams.title || 'login_title';
-        $scope.config.companyLogo = $stateParams.data.config.companyLogo;
-        $scope.config.userPassFields = $stateParams.data.config.userPassFields;
-        $scope.config.clearSubmitButtons = $stateParams.data.config.clearSubmitButtons;
-        $scope.config.enterButton = $stateParams.data.config.enterButton;
+        $scope.config = $stateParams.data;
 
         var defaultLoginHandler = function(username, password) {
             //TODO: Default to rest api call instead of this dummy implementation
