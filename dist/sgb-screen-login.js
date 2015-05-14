@@ -29,7 +29,7 @@ angular.module('sgb-screen-login', ['megazord'])
         $scope.login = {};
 
         $scope.enter = function(){
-            router.fireEvent({name: 'enterApp'});
+            _router.fireEvent({name: 'enterApp'});
         };
 
         $scope.clearFields = function () {
@@ -61,7 +61,7 @@ angular.module('sgb-screen-login', ['megazord'])
             $injector.invoke(loginHandler, null, { username: $scope.login.username, password: $scope.login.password })
                 .then(function(result){
                     if(result) {
-                        router.fireEvent({name: 'loginFinished', params: {
+                        _router.fireEvent({name: 'loginFinished', params: {
                             username: $scope.login.username,
                             password: $scope.login.password
                         }});
