@@ -3,7 +3,8 @@
 
 angular.module('sgb-screen-login', ['megazord'])
     .controller('sgb-screen-login-controller', ['_router', '_screenParams', '$injector', '$stateParams', '$scope', '$translate', '$q', function(router, _screenParams, $injector, $stateParams, $scope, $translate, $q){
-        $scope.title = _screenParams.title || 'login_title';
+
+        _screen.initialize($scope, _screenParams);
 
         $scope.companyLogo = _screenParams.companyLogo;
         $scope.userPassFields = _screenParams.userPassFields;
