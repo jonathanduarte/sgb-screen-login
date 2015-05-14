@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('sgb-screen-login', ['megazord'])
-    .controller('sgb-screen-login-controller', ['_router', '_screenParams', '$injector', '$stateParams', '$scope', '$translate', '$q', function(router, _screenParams, $injector, $stateParams, $scope, $translate, $q){
+    .controller('sgb-screen-login-controller', ['_router', '_screenParams', '_screen', '$injector', '$stateParams', '$scope', '$translate', '$q', function(_router, _screenParams, _screen, $injector, $stateParams, $scope, $translate, $q){
 
         _screen.initialize($scope, _screenParams);
 
