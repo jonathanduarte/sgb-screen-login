@@ -17,8 +17,8 @@
   },
   "homepage": "https://github.com/SYNERGY-GB/sgb-screen-login",
   "devDependencies": {
-    "browserify": "9.0.3",
-    "gulp": "^3.8.11",
+    "browserify": "^9.0.3",
+    "gulp": "^3.9.0",
     "vinyl-transform": "^1.0.0"
   }
 }

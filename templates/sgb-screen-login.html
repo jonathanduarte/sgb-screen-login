@@ -1,45 +1,36 @@
-<ion-view view-title="{{ title | translate }}" class="loginBackground" hide-nav-bar="true">
-    <ion-content class="loginView" scroll="false">
+<ion-view view-title="{{ title | translate }}"  hide-nav-bar="true">
+    <ion-content scroll="false">
 
-        <div class="row row-center appLogo" ng-show="companyLogo">
-            <div class="col text-center">
-                <img ng-src="resources/login.png" width="200px">
-            </div>
-        </div>
-
-        <div class="row row-center" ng-show="userPassFields">
+        <div class="list list-inset">
             <label class="item item-input">
-                <span class="input-label" translate="login_username"></span>
-                <input type="text" data-ng-model="login.username" />
+                <!--<span class="input-label" ></span>-->
+                <input type="text" data-ng-model="login.username" placeholder="{{'login_username' | translate}}" />
+            </label>
+            <label class="item item-input">
+                <!--<span class="input-label" translate="login_password"></span>-->
+                <input type="password" data-ng-model="login.password" placeholder="{{'login_password' | translate}}" />
             </label>
         </div>
 
-        <div class="row row-center" ng-show="userPassFields">
-            <label class="item item-input">
-                <span class="input-label" translate="login_password"></span>
-                <input type="password" data-ng-model="login.password" />
-            </label>
-        </div>
+        <div class="padding" ng-show="clearSubmitButtons">
+            <button class="button button-block button-positive" type="button" data-ng-click="doLogin()" translate="login_login">
+            </button>
+            <button class="button button-block button-positive" type="button" data-ng-click="clearFields()" translate="login_clear">
+            </button>
 
-        <div class="row row-center" ng-show="clearSubmitButtons">
-            <button class="button" type="button" data-ng-click="clearFields()" translate="login_clear"></button>
-            <button class="button" type="button" data-ng-click="doLogin()" translate="login_login"></button>
         </div>
-
-        <div class="row row-center enterButtonDiv" ng-show="enterButton">
-            <div class="col text-center buttonContainer">
-                <button nav-clear class="button button-block buttonEnter" type="button" data-ng-click="enter()" translate="login_enter"></button>
+    <!--<div class="row row-center enterButtonDiv" ng-show="enterButton">
+            <div class="col buttonContainer">
+                <button nav-clear class="button button-block button-positive buttonEnter" type="button" data-ng-click="enter()" translate="login_enter"></button>
             </div>
-        </div>
-
-
+        </div>-->
 
     </ion-content>
 
-    <div class="row row-center creatorLogo">
+    <!--<div class="row row-center creatorLogo">
         <div class="col text-center">
             <img ng-src="resources/synergy.png" width="150px">
         </div>
-    </div>
+    </div>-->
 
 </ion-view>
