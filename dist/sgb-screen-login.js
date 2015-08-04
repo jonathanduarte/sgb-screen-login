@@ -31,8 +31,8 @@ angular.module('sgb-screen-login', ['megazord'])
 
         $scope.clearFields = function () {
             $scope.login = {
-                username: '',
-                password: ''
+                username: null,
+                password: null
             };
         };
 
