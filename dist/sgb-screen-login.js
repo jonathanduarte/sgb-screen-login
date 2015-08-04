@@ -13,7 +13,7 @@ angular.module('sgb-screen-login', ['megazord'])
         $scope.enterButton = _screenParams.enterButton;
 
         //Dummy implementation for blocked account
-        $scope.missingAttempts = 3; 
+        $scope.attemptsLeft = (_screenParams.maxAttempts?_screenParams.maxAttempts : 3); 
 
         var defaultLoginHandler = function(username, password) {
             //TODO: Default to rest api call instead of this dummy implementation
@@ -22,14 +22,7 @@ angular.module('sgb-screen-login', ['megazord'])
             return result.promise;
         };
 
-        var loginHandler;
-        if(_screenParams.loginHandler) {
-            loginHandler = _screenParams.loginHandler;
-        }
-        else {
-            loginHandler = defaultLoginHandler;
-        }
-
+        var loginHandler = (_screenParams.loginHandler?_screenParams.loginHandler : defaultLoginHandler);
         $scope.login = {};
 
         $scope.enter = function(){
@@ -43,26 +36,43 @@ angular.module('sgb-screen-login', ['megazord'])
             };
         };
 
+        $scope.showPopup = function(message) {
+            console.log('deberia mostrar')
+            $translate(message).then(function(result){
+               var alertPopup = $ionicPopup.alert({
+                   title: result
+                });
+                alertPopup.then(function(res) {
+                    $scope.clearFields();
+                });
+            }); 
+        }
+
+        $scope.checkField = function (regexp, field) {
+            if(regexp) {
+                var exp = new RegExp(regexp);
+                return (exp.test(field));
+            }
+            return true; 
+        }
+
         $scope.doLogin = function() {
 
-            if ($scope.missingAttempts>0) {
+            if ($scope.attemptsLeft>0) {
+
                 //Validate username and password (if needed)
                 //console.log('username val is ' + _screenParams.usernameValidation);
-                if(_screenParams.usernameValidation) {
-                    var exp = new RegExp(_screenParams.usernameValidation);
-                    if(!exp.test($scope.login.username)) {
-                        alert($translate('login_invalid_username'));
-                        return;
-                    }
+
+                if (!($scope.checkField(_screenParams.usernameValidation, $scope.login.username))) {
+                    $scope.showPopup('login_invalid_username');
+                    return; 
+                }
+                if (!($scope.checkField(_screenParams.passwordValidation, $scope.login.password))) {
+                    $scope.showPopup('login_invalid_password');
+                    return; 
                 }
 
-                if(_screenParams.passwordValidation) {
-                    var exp = new RegExp(_screenParams.passwordValidation);
-                    if(!exp.test($scope.login.password)) {
-                        alert($translate('login_invalid_password'));
-                        return;
-                    }
-                }
+                console.log("not returning"); 
 
                 $injector.invoke(loginHandler, null, { username: $scope.login.username, password: $scope.login.password })
                     .then(function(result){
@@ -73,25 +83,14 @@ angular.module('sgb-screen-login', ['megazord'])
                             }});
                         }
                         else {
-                            $translate(['login_invalid_credentials']).then(function(msg){
-                               $scope.missingAttempts--;
-                               var alertPopup = $ionicPopup.alert({
-
-                                   title: ($scope.missingAttempts?msg['login_invalid_credentials']:'Su cuenta ha sido bloqueada')
-                                });
-                                alertPopup.then(function(res) {
-                                    $scope.clearFields();
-                                });
-                            }); 
-                        
+                            $scope.attemptsLeft--;
+                            var msg = ($scope.attemptsLeft?'login_invalid_credentials':'Su cuenta ha sido bloqueada'); 
+                            $scope.showPopup(msg);
                         }
                     });
             } else {
-                  $translate(['login_invalid_credentials']).then(function(msg){
-                       var alertPopup = $ionicPopup.alert({
-                           title: 'Su cuenta se encuentra bloqueada'
-                        });
-                    });
+                var msg = ($scope.attemptsLeft?'login_invalid_credentials':'Su cuenta ha sido bloqueada'); 
+                $scope.showPopup(msg);
             }
         };
     }]);
