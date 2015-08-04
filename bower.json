@@ -11,7 +11,7 @@
     "globals"
   ],
   "dependencies": {
-    "megazord-framework": "git@github.com:SYNERGY-GB/megazord-framework.git#master"
+    "megazord-framework": "git@github.com:SYNERGY-GB/megazord-framework.git#1.0"
   },
   "license": "Propietary",
   "private": true,
