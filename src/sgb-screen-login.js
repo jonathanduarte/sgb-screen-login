@@ -83,13 +83,12 @@ angular.module('sgb-screen-login', ['megazord'])
                         }
                         else {
                             $scope.attemptsLeft--;
-                            var msg = ($scope.attemptsLeft?'login_invalid_credentials':'Su cuenta ha sido bloqueada'); 
+                            var msg = ($scope.attemptsLeft?'login_invalid_credentials':'login_attempts_reached'); 
                             $scope.showPopup(msg);
                         }
                     });
-            } else {
-                var msg = ($scope.attemptsLeft?'login_invalid_credentials':'Su cuenta ha sido bloqueada'); 
-                $scope.showPopup(msg);
+            } else { 
+                $scope.showPopup('login_blocked');
             }
         };
     }]);
