@@ -37,7 +37,6 @@ angular.module('sgb-screen-login', ['megazord'])
         };
 
         $scope.showPopup = function(message) {
-            console.log('deberia mostrar')
             $translate(message).then(function(result){
                var alertPopup = $ionicPopup.alert({
                    title: result
@@ -72,7 +71,6 @@ angular.module('sgb-screen-login', ['megazord'])
                     return; 
                 }
 
-                console.log("not returning"); 
 
                 $injector.invoke(loginHandler, null, { username: $scope.login.username, password: $scope.login.password })
                     .then(function(result){
