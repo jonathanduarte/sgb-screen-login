@@ -8,6 +8,7 @@
   "login_invalid_credentials": "Usuario o contraseña inválidos.",
   "login_invalid_username": "Usuario inválido.",
   "login_invalid_password": "Contraseña inválida.",
+  "login_keep_session" : "No cerrar sesión",
   "login_attempts_reached": "Ha excedido el máximo número de intentos. Su cuenta ha sido bloqueda",
   "login_blocked" : "Su cuenta se encuentra bloqueada"
 }

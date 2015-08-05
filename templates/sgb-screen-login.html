@@ -1,23 +1,32 @@
 <ion-view view-title="{{ title | translate }}"  hide-nav-bar="true">
-    <ion-content scroll="false">
+    <ion-content class="padding" scroll="false">
 
         <div class="list list-inset">
             <label class="item item-input">
                 <!--<span class="input-label" ></span>-->
                 <input type="text" data-ng-model="login.username" placeholder="{{'login_username' | translate}}" />
             </label>
-            <label class="item item-input">
+            <label class="item item-input" >
                 <!--<span class="input-label" translate="login_password"></span>-->
                 <input type="password" data-ng-model="login.password" placeholder="{{'login_password' | translate}}" />
             </label>
         </div>
-
+        
         <div class="padding" ng-show="clearSubmitButtons">
             <button class="button button-block button-positive" type="button" data-ng-click="doLogin()" translate="login_login">
             </button>
             <button class="button button-block button-positive" type="button" data-ng-click="clearFields()" translate="login_clear">
             </button>
+        </div>
 
+        <div class="item item-toggle"> 
+            {{'login_keep_session' | translate}}
+            <label class="toggle toggle-balanced">
+                <input type="checkbox" ng-model="keepSession">
+                <div class="track">
+                    <div class="handle"></div>
+                </div>
+            </label>
         </div>
     <!--<div class="row row-center enterButtonDiv" ng-show="enterButton">
             <div class="col buttonContainer">
