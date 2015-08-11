@@ -11,6 +11,7 @@ angular.module('sgb-screen-login', ['megazord'])
         $scope.userPassFields = _screenParams.userPassFields;
         $scope.clearSubmitButtons = _screenParams.clearSubmitButtons;
         $scope.enterButton = _screenParams.enterButton;
+        $scope.rememberMe = _screenParams.rememberMe; 
 
         //Dummy implementation for blocked account
         $scope.attemptsLeft = (_screenParams.maxAttempts?_screenParams.maxAttempts : 3); 
@@ -92,8 +93,5 @@ angular.module('sgb-screen-login', ['megazord'])
             }
         };
     }]);
-
-
-
 
 },{}]},{},[1]);
