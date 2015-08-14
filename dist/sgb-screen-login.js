@@ -10,8 +10,8 @@ angular.module('sgb-screen-login', ['megazord'])
         $scope.companyLogo = _screenParams.companyLogo;
         $scope.userPassFields = _screenParams.userPassFields;
         $scope.clearSubmitButtons = _screenParams.clearSubmitButtons;
-        $scope.enterButton = _screenParams.enterButton;
         $scope.rememberMe = _screenParams.rememberMe; 
+        $scope.forgotPassword = _screenParams.forgotPassword; 
 
         //Dummy implementation for blocked account
         $scope.attemptsLeft = (_screenParams.maxAttempts?_screenParams.maxAttempts : 3); 
@@ -92,6 +92,16 @@ angular.module('sgb-screen-login', ['megazord'])
                 $scope.showPopup('login_blocked');
             }
         };
+
+        $scope.forgotPass = function () {
+            _router.fireEvent(
+                {
+                 name: 'forgotPassword', 
+                 params: {}
+                }
+            );
+        }
+
     }]);
 
 },{}]},{},[1]);

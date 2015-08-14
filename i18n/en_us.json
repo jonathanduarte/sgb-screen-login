@@ -3,12 +3,13 @@
   "login_username": "Username",
   "login_password": "Password",
   "login_clear": "Clear",
-  "login_login": "Login",
-  "login_enter": "Enter",
+  "login_login": "LOGIN",
   "login_invalid_credentials": "Invalid username or password.",
   "login_invalid_username": "Invalid username.",
   "login_invalid_password": "Invalid password.",
   "login_keep_session" : "Remember me",
   "login_attempts_reached": "You have reached the maximum number of attempts. Your account has been blocked",
-  "login_blocked" : "Your account is currently blocked"
+  "login_blocked" : "Your account is currently blocked",
+  "login_forgot_password" : "Forgot password?"
+  
 }

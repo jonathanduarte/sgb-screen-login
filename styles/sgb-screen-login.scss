@@ -1,0 +1,156 @@
+$login-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/Artboard-2%403x.png'; 
+$login-user-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-04.svg'; 
+$login-pwd-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-03.svg'; 
+$login-btn-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-05.svg'; 
+$dark-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-07.svg';
+$footerbar-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-06.svg';
+$welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-08.svg';
+
+
+
+
+.loginBackground {
+	background: url($login-background) no-repeat center;
+	background-size: 100%;
+}
+
+.username-background {
+	background: url($login-user-background) no-repeat center;
+	background-size: 100%;
+}
+
+.pwd-background {
+	background: url($login-pwd-background) no-repeat center;
+	background-size: 100%;
+}
+
+.login-button-background {
+	background: url($login-btn-background) no-repeat center;
+	background-size: 100%;
+}
+
+.welcome-background {
+	background: url($welcome-background) no-repeat center;
+	background-size: 100%;
+	padding-top: 6em;
+}
+
+
+.dark-background {
+	background: url($dark-background) no-repeat center;
+	background-size: 100%;
+	margin-top: -2em;
+	border-radius: 6px;
+}
+
+.footer-background {
+	background: url($footerbar-background) no-repeat center;
+	background-size: 100%;
+	height: 4em;
+	padding-top:1.2em;
+}
+
+.button.activated {
+	background: url($login-btn-background) no-repeat center;
+	background-size: 100%;
+}
+
+
+.digitel-title {
+	color:white;
+}
+
+.digitel-subtitle {
+	color: white; 
+	font-size: 24px; 
+}
+
+.digitel-text {
+	color: white;
+	font-size: 1em;  
+}
+
+
+.digitel-input {
+	height: 50px; 
+	border-radius: 6px;
+	border-width: 2px !important;
+	margin-bottom: -0.7em;
+}
+
+
+.digitel-separator {
+	color: white; 
+	position:relative;
+	bottom:1.8em;
+}
+
+.pull-text {
+	position:relative;
+	bottom: 10px; 
+}
+
+.icon-large {
+	font-size: 150%; 
+}
+
+.light-text {
+	opacity: 0.5; 
+}
+
+.center-text {
+	text-align: center;
+}
+
+.right-text {
+	text-align: right;
+}
+
+.forgotpwd-text {
+	margin-top:2em;
+	margin-bottom: 0.5em;
+}
+
+.footer-text {
+	font-size: 1.3em;
+	font-style: bold;
+}
+
+
+.push-content {
+	position:relative; 
+	top: 150px; 
+}
+
+.wrap {
+    display: inline-block;
+    overflow: hidden;
+}
+
+.login-button-text {
+	margin-bottom: -1em !important;
+	color:white !important;
+}
+
+input[type="text"], input[type="password"] {
+
+  color : #ffffff; 
+
+}
+ 
+/* Placeholder color text */
+::-webkit-input-placeholder {
+  color: white !important;  
+}
+
+:-moz-placeholder { /* Firefox 18- */
+    color: white !important;    
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+     color: white !important;    
+}
+
+:-ms-input-placeholder {  
+   color: white !important;   
+}
