@@ -2,14 +2,14 @@
     <ion-content class="padding">
         <div>
             <!--Welcome title-->
-            <div class="center-text">
-                <h3 class="digitel-title wrap"> Vívelo Todo </h3>
+            <div ng-show="_screenParams.screenTitle" class="center-text">
+                <h3 class="digitel-title wrap"> {{_screenParams.screenTitle}} </h3>
             </div>
 
             <div class="push-content">
                 <!--Welcome image-->
                 <div class="center-text welcome-background">
-                    <h2 class="wrap digitel-subtitle"> Bienvenido </h2>
+                    <h2 class="thick wrap digitel-subtitle"> Bienvenido </h2>
                     <p class="pull-text wrap digitel-text"> si eres cliente de 412enLínea ingresa tus datos </p>
                 </div> 
      
@@ -68,8 +68,9 @@
                 </div>
 
                 <!-- digitel footer -->
-                <div class="center-text footer-background">
-                    <p class="wrap digitel-text footer-text"> Nuevo usuario </p>
+                <div class="center-text footer-background" ng-show = "_screenParams.newUser" 
+                     ng-click="enter({{_screenParams.newUser}})">
+                    <p class="thick wrap digitel-text footer-text"> Nuevo usuario </p>
                 </div> 
 
                 </div> 
