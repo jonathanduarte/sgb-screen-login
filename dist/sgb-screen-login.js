@@ -4,14 +4,8 @@ angular.module('sgb-screen-login', ['megazord'])
     .controller('sgb-screen-login-controller', ['_router', '_screenParams', '_screen', '$injector', '$stateParams', '$scope', '$translate', '$q','$ionicPopup', 
                 function(_router, _screenParams, _screen, $injector, $stateParams, $scope, $translate, $q, $ionicPopup){
 
-        _screen.initialize($scope, _screenParams);
-
         //Screen template parameters
-        $scope.companyLogo = _screenParams.companyLogo;
-        $scope.userPassFields = _screenParams.userPassFields;
-        $scope.clearSubmitButtons = _screenParams.clearSubmitButtons;
-        $scope.rememberMe = _screenParams.rememberMe; 
-        $scope.forgotPassword = _screenParams.forgotPassword; 
+        _screen.initialize($scope, _screenParams);
 
         //Dummy implementation for blocked account
         $scope.attemptsLeft = (_screenParams.maxAttempts?_screenParams.maxAttempts : 3); 
@@ -32,8 +26,8 @@ angular.module('sgb-screen-login', ['megazord'])
 
         $scope.clearFields = function () {
             $scope.login = {
-                username: null,
-                password: null
+                username:'',
+                password: ''
             };
         };
 
@@ -57,9 +51,8 @@ angular.module('sgb-screen-login', ['megazord'])
         }
 
         $scope.doLogin = function() {
-
+            console.log($scope.login.username);
             if ($scope.attemptsLeft>0) {
-
                 //Validate username and password (if needed)
                 //console.log('username val is ' + _screenParams.usernameValidation);
 
@@ -71,7 +64,6 @@ angular.module('sgb-screen-login', ['megazord'])
                     $scope.showPopup('login_invalid_password');
                     return; 
                 }
-
 
                 $injector.invoke(loginHandler, null, { username: $scope.login.username, password: $scope.login.password })
                     .then(function(result){
@@ -101,6 +93,13 @@ angular.module('sgb-screen-login', ['megazord'])
                 }
             );
         }
+
+
+        $scope.extraParams = {
+            username: $scope.login.username,
+            password: $scope.login.password, 
+            loginFunction : $scope.doLogin
+        };
 
     }]);
 

@@ -1,5 +1,7 @@
 <ion-view view-title="{{ title | translate }}"  hide-nav-bar="true" class="loginBackground">
-    <ion-content class="padding" scroll="false">
-        <mz-template template-type="_screenParams.templateType" screen-params="_screenParams"></mz-template>
+    <ion-content class="myPadding" scroll="false">
+        <mz-template template-type="_screenParams.templateType" screen-params="_screenParams"
+                     params="extraParams">
+        </mz-template>
     </ion-content>
 </ion-view>
