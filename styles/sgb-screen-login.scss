@@ -1,4 +1,4 @@
-$login-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/Artboard-2%403x.png'; 
+$login-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/Artboard-2.png'; 
 $login-user-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-04.svg'; 
 $login-pwd-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-03.svg'; 
 $login-btn-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-05.svg'; 
@@ -6,8 +6,11 @@ $dark-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-logi
 $footerbar-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-06.svg';
 $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-08.svg';
 
+
+
+
 .loginBackground {
-	background: url($login-background) no-repeat center;
+	background: url($login-background) no-repeat center fixed;
 	background-size: 100%;
 }
 
@@ -46,7 +49,6 @@ $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-l
 .footer-background {
 	background: url($footerbar-background) no-repeat center;
 	background-size: 100%;
-	height: 4em;
 	padding-top:1.2em;
 	margin-right: -1em;
 	margin-left: -1em;
@@ -56,6 +58,17 @@ $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-l
 	background: url($login-btn-background) no-repeat center;
 	background-size: 100%;
 }
+
+.scroll{ 
+    height: 100%;
+}
+
+#map-canvas {
+    height: 100%;
+    margin: 0px;
+    padding: 0px
+}
+
 
 
 .digitel-title {
@@ -109,7 +122,6 @@ $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-l
 
 .forgotpwd-text {
 	margin-top:2.5em;
-	margin-bottom: 0.5em;
 }
 
 .footer-text {
@@ -124,7 +136,7 @@ $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-l
 
 .push-content {
 	position:relative; 
-	top: 160px; 
+	top: 110px; 
 }
 
 .wrap {
