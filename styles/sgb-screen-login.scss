@@ -10,9 +10,15 @@ $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-l
 
 
 .loginBackground {
-	background: url($login-background) no-repeat center fixed;
-	background-size: 100%;
+	background: url($login-background) no-repeat;
+	background-attachment:fixed;
+    background-position: top center;
+    background-size: 100%;
+    z-index: 2;
+    position: absolute; 
 }
+
+
 
 .username-background {
 	background: url($login-user-background) no-repeat center;
@@ -99,7 +105,7 @@ $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-l
 .digitel-separator {
 	color: white; 
 	position:relative;
-	bottom:0.8em;
+	bottom:0.9em;
 }
 
 .pull-text {
