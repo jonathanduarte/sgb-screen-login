@@ -89,8 +89,9 @@ $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-l
 .digitel-input {
 	height: 50px; 
 	border-radius: 6px;
-	border-width: 2px !important;
+	border-width: 0.5px !important;
 	margin-bottom: -0.7em;
+	border-color: white;
 }
 
 
@@ -136,7 +137,7 @@ $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-l
 
 .push-content {
 	position:relative; 
-	top: 110px; 
+	top: 135px; 
 }
 
 .wrap {
