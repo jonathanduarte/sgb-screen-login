@@ -19,11 +19,7 @@ angular.module('sgb-screen-login', ['megazord'])
 
         var loginHandler = (_screenParams.loginHandler?_screenParams.loginHandler : defaultLoginHandler);
         $scope.login = {};
-
-        $scope.enter = function(event){
-            _router.fireEvent({name: event});
-        };
-
+        
         $scope.clearFields = function () {
             $scope.login = {
                 username:'',

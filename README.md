@@ -1,23 +1,29 @@
-SGB-screen-login
+<h1>SGB-screen-login</h1>
 
-Propósito
+<h3>Propósito</h3>
 
-Esta pantalla para controlar el ingreso de los usuarios a una aplicación.
+Esta pantalla sirve para controlar el ingreso de los usuarios a una aplicación.
 
-Datos esperados
+<h3>Datos esperados</h3>
 
 No se reciben datos ya que la pantalla se comunica con un servicio para resolver la solicitud de inicio de sesión
 
-Parametrización
+<h3>Parametrización</h3>
 
-Como se trata de una pantalla de inicio de sesión, las validaciones pueden cambiar entre cada aplicación, por lo tanto, estas validaciones se encuentran parametrizadas para que puedan cambiar dependiendo de los requerimientos. Todos los parámetros deben recibirse como parámetros de la pantalla
+Como se trata de una pantalla de inicio de sesión, las validaciones pueden cambiar entre cada aplicación, por lo tanto, estas validaciones se encuentran parametrizadas para que puedan cambiar dependiendo de los requerimientos. La configuración debe recibirse en los parámetros de la pantalla
 
-- usernameValidation: expresión regular correspondiente a la validación del nombre de usuario<br/>
-- passwordValidation: expresión regular correspondiente a la validación de la contraseña del usuario<br/>
-- maxAttempts: número máximo de intentos que tiene el usuario para iniciar sesión<br/>
-- loginHandler: en caso de que se necesite un manejador de sesión muy especifico, sino se utilizará un manejador por defecto. <br/>
-	
+- **usernameValidation**: expresión regular correspondiente a la validación del nombre de usuario
+- **passwordValidation**: expresión regular correspondiente a la validación de la contraseña del usuario
+- **maxAttempts**: número máximo de intentos que tiene el usuario para iniciar sesión
+- **loginHandler**: en caso de que se necesite un manejador de sesión muy especifico, sino se utilizará un manejador por defecto. 
+- **templateType**: función o nombre que permita identificar el template a utilizar para la pantalla, por ejemplo: "@digitel"
+- **screenTitle**: Título de la pantalla 
+- **forgotPassword**: Booleano que indica si se quiere dar la opción al usuario de recuperar su contraseña
+- **infoMessage** : Mensaje al usuario
+- **welcomeMessage**: Mensaje de bienvenida a la aplicación
+- **signUpMessage**: String que da la opción de registrarse, el string se mostraŕa y tambien otorgará la funcionalidad
 
-Diseño
+
+<h3> Diseño </h3>
 
 ![Alt Text](https://s3.amazonaws.com/megazord-framework/balsamiq+mockups/sgb-screen-login.png)
