@@ -8,7 +8,7 @@ Esta pantalla sirve para controlar el ingreso de los usuarios a una aplicación.
 
 No se reciben datos ya que la pantalla se comunica con un servicio para resolver la solicitud de inicio de sesión
 
-<h3>Parametrización</h3>
+<h3>Parametros de la pantalla</h3>
 
 Como se trata de una pantalla de inicio de sesión, las validaciones pueden cambiar entre cada aplicación, por lo tanto, estas validaciones se encuentran parametrizadas para que puedan cambiar dependiendo de los requerimientos. La configuración debe recibirse en los parámetros de la pantalla
 
