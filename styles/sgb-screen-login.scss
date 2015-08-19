@@ -11,7 +11,6 @@ $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-l
 
 .loginBackground {
 	background: url($login-background) no-repeat;
-	background-attachment:fixed;
     background-position: top center;
     background-size: 100%;
     z-index: 2;
