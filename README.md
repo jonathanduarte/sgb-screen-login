@@ -6,7 +6,10 @@ Esta pantalla sirve para controlar el ingreso de los usuarios a una aplicación.
 
 <h3>Datos esperados</h3>
 
-No se reciben datos ya que la pantalla se comunica con un servicio para resolver la solicitud de inicio de sesión
+- **infoMessage** : Mensaje al usuario
+- **welcomeMessage**: Mensaje de bienvenida a la aplicación
+- **signUpMessage**: String que da la opción de registrarse, el string se mostraŕa y tambien otorgará la funcionalidad
+- **screenTitle**: Título de la pantalla 
 
 <h3>Parametros de la pantalla</h3>
 
@@ -17,12 +20,7 @@ Como se trata de una pantalla de inicio de sesión, las validaciones pueden camb
 - **maxAttempts**: número máximo de intentos que tiene el usuario para iniciar sesión
 - **loginHandler**: en caso de que se necesite un manejador de sesión muy especifico, sino se utilizará un manejador por defecto. 
 - **templateType**: función o nombre que permita identificar el template a utilizar para la pantalla, por ejemplo: "@digitel"
-- **screenTitle**: Título de la pantalla 
 - **forgotPassword**: Booleano que indica si se quiere dar la opción al usuario de recuperar su contraseña
-- **infoMessage** : Mensaje al usuario
-- **welcomeMessage**: Mensaje de bienvenida a la aplicación
-- **signUpMessage**: String que da la opción de registrarse, el string se mostraŕa y tambien otorgará la funcionalidad
-
 
 <h3> Diseño </h3>
 

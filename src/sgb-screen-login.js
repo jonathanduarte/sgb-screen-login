@@ -5,6 +5,7 @@ angular.module('sgb-screen-login', ['megazord'])
 
         //Screen template parameters
         _screen.initialize($scope, _screenParams);
+        $scope.data = $stateParams.data; 
 
         //Dummy implementation for blocked account
         $scope.attemptsLeft = (_screenParams.maxAttempts?_screenParams.maxAttempts : 3); 

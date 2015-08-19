@@ -1,19 +1,19 @@
 <!--Welcome title-->
-<div ng-show="screenParams.screenTitle" class="center-text">
-    <h3 class="digitel-title wrap"> {{screenParams.screenTitle}} </h3>
+<div ng-show="bindTo.screenTitle" class="center-text">
+    <h3 class="digitel-title wrap"> {{bindTo.screenTitle}} </h3>
 </div>
 
 <div class="push-content">
     <!--Welcome image-->
-    <div class="center-text welcome-background" ng-show="screenParams.welcomeMessage">
-        <h2 class="thick wrap digitel-subtitle"> {{screenParams.welcomeMessage}} </h2>
+    <div class="center-text welcome-background" ng-show="bindTo.welcomeMessage">
+        <h2 class="thick wrap digitel-subtitle"> {{bindTo.welcomeMessage}} </h2>
     </div> 
 
     <hr class="digitel-separator"/>
 
     <!-- Login input -->
     <div class="dark-background text-center">
-        <p class="pull-text wrap digitel-text" ng-show="screenParams.infoMessage"> {{screenParams.infoMessage}}</p>
+        <p class="pull-text wrap digitel-text" ng-show="bindTo.infoMessage"> {{bindTo.infoMessage}}</p>
         <!-- Username -->
         <label class="row item item-input digitel-input username-background"> 
             <div class="col col-offset-20 col-80">
@@ -64,8 +64,8 @@
         </div>
 
         <!-- digitel footer -->
-        <div class="center-text footer-background" ng-show = "screenParams.signUpMessage">
-            <p class="thick wrap digitel-text footer-text"> {{screenParams.signUpMessage }} </p>
+        <div class="center-text footer-background" ng-show = "bindTo.signUpMessage">
+            <p class="thick wrap digitel-text footer-text"> {{bindTo.signUpMessage }} </p>
         </div> 
 
     </div> 
