@@ -1,3 +1,6 @@
+//TESTING
+
+
 /* Applicacion Styling, here you can define the value for all the application's variables.
    This will propagate the style throughout the application's screens */
 
@@ -223,8 +226,8 @@ input[type="text"], input[type="password"] {
 	padding-top:1em;
 }
 
- p {
-	color: $text-color; 
+p {
+	color: $text-color !important; 
 }
 
  .myPadding {
