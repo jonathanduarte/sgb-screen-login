@@ -1,7 +1,77 @@
-<ion-view view-title="{{ title | translate }}"  hide-nav-bar="true" class=" loginBackground">
-    <ion-content class="myPadding" scroll="true">
-        <mz-template template-type="_screenParams.templateType" screen-params="_screenParams"
-                     params="extraParams" bind-to="data">
-        </mz-template>
+<ion-view mz-screen view-title="{{ title | translate }}"  hide-nav-bar="true" class="app-background">
+    <ion-content class="myPadding">
+		<!--Welcome title-->
+		<div ng-show="data.screenTitle" class="text-center">
+		    <h2> {{data.screenTitle}} </h2>
+		</div>
+
+		<div class="push-content">
+		    <!--Welcome image-->
+		    <div class="text-center welcome-background" ng-show="data.welcomeMessage">
+		        <h3 class="thick"> {{data.welcomeMessage}} </h3>
+		    </div> 
+
+		    <hr class="separator"/>
+
+		    <!-- Login input -->
+		    <div class="dark-background text-center">
+		        <p class="pull-text wrap" ng-show="data.infoMessage"> {{data.infoMessage}}</p>
+		        <!-- Username -->
+		        <label class="row item item-input app-input username-background"> 
+		            <div class="col col-offset-20 col-80">
+		                <input type="text" data-ng-model="login.username"
+		                       placeholder="{{'login_username' | translate}}" />
+		            </div>
+		        </label>
+		        <br/>
+		        <!-- Password -->
+		        <label class="row item item-input app-input pwd-background" >
+		            <div class="col col-offset-20 col-80">
+		                <input type="password" data-ng-model="login.password" 
+		                        placeholder="{{'login_password' | translate}}" />
+		            </div>
+		        </label>
+		        <br/>
+		  
+		        <!-- Login button -->    
+		        <label class="row item item-input app-input login-button-background "
+		               data-ng-click="doLogin()">
+		            <div class="col col-80 text-right">
+		               <p class="wrap"> {{'login_login' | translate}} </p>
+		            </div>  
+		        </label>
+		   
+		    
+		        <!-- Optional clean fields button"-->
+		        <div class="row" ng-show="_screenParams.clearSubmitButtons">
+		            <button class="button button-block button-positive" type="button" 
+		                    data-ng-click="clearFields()" translate="login_clear">
+		            </button>
+		        </div>
+
+		        <!--Optional forgot password -->
+		        <div class="center-text forgotpwd-text" ng-show="_screenParams.forgotPassword">
+		            <p class="wrap" ng-click="forgotPass()"> {{'login_forgot_password' | translate}} </p>
+		        </div>
+		      
+		        <!--Optional remember me toggle -->
+		        <div class="item item-toggle" ng-show="_screenParams.rememberMe"> 
+		            {{'login_keep_session' | translate}}
+		            <label class="toggle toggle-balanced">
+		                <input type="checkbox" ng-model="keepSession">
+		                <div class="track">
+		                    <div class="handle"></div>
+		                </div>
+		            </label>
+		        </div>
+
+		        <!-- signup footer -->
+		        <div class="center-text signup-background" ng-show = "data.signUpMessage">
+		            <p class="thick wrap"> {{data.signUpMessage }} </p>
+		        </div> 
+
+		    </div> 
+		</div>
+
     </ion-content>
 </ion-view>

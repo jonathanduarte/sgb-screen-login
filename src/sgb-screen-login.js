@@ -90,13 +90,6 @@ angular.module('sgb-screen-login', ['megazord'])
             );
         }
 
-
-        $scope.extraParams = {
-            username: $scope.login.username,
-            password: $scope.login.password, 
-            loginFunction : $scope.doLogin
-        };
-
     }]);
 
 
