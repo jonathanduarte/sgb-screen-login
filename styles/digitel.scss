@@ -15,49 +15,47 @@ $app-logo: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/Recur
 /* Text Styling */
 
 //Title color, font and size
-$title-color: #ffffff ; 
-$title-font: Arial, Helvetica, sans-serif;
-$title-size: 24px;
+$title-color: #ffffff !default; 
+$title-font: Arial, Helvetica, sans-serif !default;
+$title-size: 24px !default;
 
 //Subtitle color, font and size
 
-$subtitle-color: #ffffff; 
-$subtitle-font: Arial, Helvetica, sans-serif;
-$subtitle-size: 20px;
+$subtitle-color: #ffffff !default; 
+$subtitle-font: Arial, Helvetica, sans-serif !default;
+$subtitle-size: 20px !default;
 
 //text color, font and size
 
-$text-color: #ffffff; 
-$text-font: Arial, Helvetica, sans-serif;
-$text-size: 14px;
+$text-color: #ffffff !default; 
+$text-font: Arial, Helvetica, sans-serif !default;
+$text-size: 14px !default;
 
 //Input fields & labels
 
-$input-height: 50px; 
-$input-border-radius: 4px; 
-$input-border-width: 1px; 
-$input-separation: -0.8em;
-$input-border-color: #ffffff;
-$input-text-color: #ffffff; 
+$input-height: 50px !default; 
+$input-border-radius: 4px !default; 
+$input-border-width: 1px !default; 
+$input-separation: -0.8em !default;
+$input-border-color: #ffffff !default;
+$input-text-color: #ffffff !default; 
 
 //Input placeholder color
 
 $placeholder-color: #ffffff !important; 
 
 //Top bar (header) color
-$top-bar-color: blue;
+$top-bar-color: blue !default;
 
 //Bottom bar (footer) color
-$bottom-bar-color: blue;
+$bottom-bar-color: blue !default;
 
 //links color 
-$link-color: blue; 
+$link-color: blue !default;  
 
 //Icon size
-$icon-size: 200%; 
+$icon-size: 200% !default; 
 
-//Push content
-$push: 140px; 
 
 
 /* LOGIN SPECIFIC VARIABLES */
@@ -68,6 +66,8 @@ $login-btn-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel
 $dark-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-07.svg';
 $signup-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-06.svg';
 $welcome-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-08.svg';
+$push: 140px; 
+
 
 /* Mixins */
 
