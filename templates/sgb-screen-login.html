@@ -17,29 +17,29 @@
 		    <div class="dark-background text-center">
 		        <p class="pull-text wrap" ng-show="data.infoMessage"> {{data.infoMessage}}</p>
 		        <!-- Username -->
-		        <label class="row item item-input app-input username-background"> 
+		        <div class="row item item-input app-input pwd-background"> 
 		            <div class="col col-offset-20 col-80">
 		                <input type="text" data-ng-model="login.username"
 		                       placeholder="{{'login_username' | translate}}" />
 		            </div>
-		        </label>
+		        </div>
 		        <br/>
 		        <!-- Password -->
-		        <label class="row item item-input app-input pwd-background" >
+		        <div class="row item item-input app-input pwd-background" >
 		            <div class="col col-offset-20 col-80">
 		                <input type="password" data-ng-model="login.password" 
 		                        placeholder="{{'login_password' | translate}}" />
 		            </div>
-		        </label>
+		        </div>
 		        <br/>
 		  
 		        <!-- Login button -->    
-		        <label class="row item app-input login-button-background "
+		        <div class="row item app-input login-button-background "
 		               data-ng-click="doLogin()">
 		            <div class="col col-80 text-right">
 		               <p class="wrap"> {{'login_login' | translate}} </p>
 		            </div>  
-		        </label>
+		        </div>
 		   
 		    
 		        <!-- Optional clean fields button"-->
@@ -57,12 +57,12 @@
 		        <!--Optional remember me toggle -->
 		        <div class="item item-toggle" ng-show="_screenParams.rememberMe"> 
 		            {{'login_keep_session' | translate}}
-		            <label class="toggle toggle-balanced">
+		            <div class="toggle toggle-balanced">
 		                <input type="checkbox" ng-model="keepSession">
 		                <div class="track">
 		                    <div class="handle"></div>
 		                </div>
-		            </label>
+		            </div>
 		        </div>
 
 		        <!-- signup footer -->
