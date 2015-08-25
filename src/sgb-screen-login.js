@@ -50,7 +50,6 @@ angular.module('sgb-screen-login', ['megazord'])
             console.log($scope.login.username);
             if ($scope.attemptsLeft>0) {
                 //Validate username and password (if needed)
-                //console.log('username val is ' + _screenParams.usernameValidation);
 
                 if (!($scope.checkField(_screenParams.usernameValidation, $scope.login.username))) {
                     $scope.showPopup('login_invalid_username');
@@ -65,10 +64,13 @@ angular.module('sgb-screen-login', ['megazord'])
                     .then(function(result){
                         if(result) {
                             /* If $scope.keepSession Do something */
-                            _router.fireEvent({name: 'loginFinished', params: {
-                                username: $scope.login.username,
-                                password: $scope.login.password
-                            }});
+                            _router.fireEvent({
+                                name: 'loginFinished', 
+                                params: {
+                                    username: $scope.login.username,
+                                    password: $scope.login.password
+                                }
+                            });
                         }
                         else {
                             $scope.attemptsLeft--;
