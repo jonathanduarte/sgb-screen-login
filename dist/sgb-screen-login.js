@@ -76,11 +76,27 @@ angular.module('sgb-screen-login', ['megazord'])
                         else {
                             $scope.attemptsLeft--;
                             var msg = ($scope.attemptsLeft?'login_invalid_credentials':'login_attempts_reached'); 
-                            $scope.showPopup(msg);
+                            if ($scope._screenParams.showPopup) {
+                                $scope.showPopup(msg);
+                            } else {
+                                _router.fireEvent({
+                                    name: 'loginFailed', 
+                                    params: {}
+                                });
+                            }
                         }
                     });
+
             } else { 
-                $scope.showPopup('login_blocked');
+
+                if ($scope._screenParams.showPopup) {
+                    $scope.showPopup('login_blocked');
+                } else {
+                    _router.fireEvent({
+                        name: 'loginBlocked', 
+                        params: {}
+                    });
+                }
             }
         };
 
