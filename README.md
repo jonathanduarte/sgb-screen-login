@@ -15,6 +15,7 @@ Esta pantalla sirve para controlar el ingreso de los usuarios a una aplicación.
 
 Como se trata de una pantalla de inicio de sesión, las validaciones pueden cambiar entre cada aplicación, por lo tanto, estas validaciones se encuentran parametrizadas para que puedan cambiar dependiendo de los requerimientos. La configuración debe recibirse en los parámetros de la pantalla
 
+- **onScreenValidation**: booleano que indica si se quiere validar el formato de los campos en la pantalla
 - **usernameValidation**: expresión regular correspondiente a la validación del nombre de usuario
 - **passwordValidation**: expresión regular correspondiente a la validación de la contraseña del usuario
 - **maxAttempts**: número máximo de intentos que tiene el usuario para iniciar sesión
