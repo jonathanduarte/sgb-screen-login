@@ -140,7 +140,7 @@ p,h1,h2,h3,h4,h5,h6 {
 	border-radius: $input-border-radius;
 	border-width: $input-border-width;
 	margin-bottom: $input-separation;
-	border-color: $input-border-color;  
+	border: 1px solid $input-border-color;
 }
 
 /* Password and input text color */
@@ -241,5 +241,12 @@ p {
 
  .separator {
 	@include pull(0.9em);
-	color: #FFF;
+	display: block;
+    height: 0.1em;
+    border: 0;
+    border-top: 0.15em solid white;
+}
+
+.icon {
+	color:white; 
 }

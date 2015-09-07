@@ -15,29 +15,35 @@
 
 		    <!-- Login input -->
 		    <div class="dark-background text-center">
-		        <p class="pull-text wrap" ng-show="data.infoMessage"> {{data.infoMessage}}</p>
+		        <p class="pull-text" ng-show="data.infoMessage"> {{data.infoMessage}}</p>
 		        <!-- Username -->
-		        <div class="row item item-input app-input pwd-background"> 
-		            <div class="col col-offset-20 col-80">
+		        <div class="row item-input app-input pwd-background item-icon-right"> 
+		            <div class="col col-offset-20 col-75">
 		                <input type="text" data-ng-model="login.username"
+		                	   ng-change="checkUsername(login.username,_screenParams.usernameValidation)"
 		                       placeholder="{{'login_username' | translate}}" />
 		            </div>
+		            <i class="icon ion-checkmark" ng-show="userIcon===true"></i>
+		            <i class="icon ion-close-round" ng-show="userIcon===false"></i>
 		        </div>
 		        <br/>
 		        <!-- Password -->
-		        <div class="row item item-input app-input pwd-background" >
-		            <div class="col col-offset-20 col-80">
+		        <div class="row item-input app-input pwd-background item-icon-right" >
+		            <div class="col col-offset-20 col-75">
 		                <input type="password" data-ng-model="login.password" 
+		                		ng-change="checkPassword(login.password,_screenParams.passwordValidation)"
 		                        placeholder="{{'login_password' | translate}}" />
 		            </div>
+		            <i class="icon ion-checkmark" ng-show="passwordIcon===true"></i>
+		            <i class="icon ion-close-round" ng-show="passwordIcon===false"></i>
 		        </div>
 		        <br/>
 		  
 		        <!-- Login button -->    
-		        <div class="row item app-input login-button-background "
+		        <div class="row app-input login-button-background "
 		               data-ng-click="doLogin()">
 		            <div class="col col-80 text-right">
-		               <p class="wrap"> {{'login_login' | translate}} </p>
+		               <p style="margin-top:0.2em"> {{'login_login' | translate}} </p>
 		            </div>  
 		        </div>
 		   

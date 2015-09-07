@@ -1,24 +1,23 @@
 'use strict';
 angular.module('sgb-screen-login', ['megazord'])
-    .controller('sgb-screen-login-controller', ['_router', '_screenParams', '_screen', '$injector', '$stateParams', '$scope', '$translate', '$q','$ionicPopup', 
-                function(_router, _screenParams, _screen, $injector, $stateParams, $scope, $translate, $q, $ionicPopup){
+    .controller('sgb-screen-login-controller', ['_router', '_screenParams', '_screen', '$injector', '$stateParams', '$scope', '$translate', '$q', 
+                function(_router, _screenParams, _screen, $injector, $stateParams, $scope, $translate, $q){
 
         //Screen template parameters
         _screen.initialize($scope, _screenParams);
         $scope.data = $stateParams.data; 
-
-        //Dummy implementation for blocked account
+        $scope.login = {
+            username: '',
+            passsword: ''
+        };
         $scope.attemptsLeft = (_screenParams.maxAttempts?_screenParams.maxAttempts : 3); 
 
-        var defaultLoginHandler = function(username, password) {
-            //TODO: Default to rest api call instead of this dummy implementation
-            var result = $q.defer();
-            result.resolve(username == password);
-            return result.promise;
-        };
-
-        var loginHandler = (_screenParams.loginHandler?_screenParams.loginHandler : defaultLoginHandler);
-        $scope.login = {};
+        //FIELD & FORM VALIDATION
+        $scope.checkField = function (field,regexp) {
+            if (field===undefined || !regexp) return true; 
+            var exp = new RegExp(regexp);
+            return (exp.test(field));
+        }
         
         $scope.clearFields = function () {
             $scope.login = {
@@ -27,38 +26,49 @@ angular.module('sgb-screen-login', ['megazord'])
             };
         };
 
-        $scope.showPopup = function(message) {
-            $translate(message).then(function(result){
-               var alertPopup = $ionicPopup.alert({
-                   title: result
-                });
-                alertPopup.then(function(res) {
-                    $scope.clearFields();
-                });
-            }); 
+        $scope.checkUsername = function(field,regexp) {
+            if (!$scope._screenParams.onScreenValidation) return; 
+            $scope.userIcon = $scope.checkField(field,regexp);
+            $scope.userIcon = $scope.login.username.length==0?undefined:$scope.userIcon;        
         }
 
-        $scope.checkField = function (regexp, field) {
-            if(regexp) {
-                var exp = new RegExp(regexp);
-                return (exp.test(field));
-            }
-            return true; 
+        $scope.checkPassword = function(field,regexp) {
+            if (!$scope._screenParams.onScreenValidation) return;
+            $scope.passwordIcon = $scope.checkField(field,regexp);
+            $scope.passwordIcon = $scope.login.password.length==0?undefined:$scope.passwordIcon;        
         }
+
+        $scope.formValidated = function () {
+            return $scope.checkField($scope.login.username, $scope._screenParams.usernameValidation) && 
+                   $scope.checkField($scope.login.password, $scope._screenParams.passwordValidation);
+        }
+
+        $scope.resetForm = function() {
+            $scope.clearFields(); 
+            $scope.passwordIcon = undefined; 
+            $scope.userIcon = undefined; 
+        }
+
+        //LOGIN HANDLER
+
+        //Default login handler
+        var defaultLoginHandler = function(username, password) {
+            //TODO: Default to rest api call instead of this dummy implementation
+            var result = $q.defer();
+            result.resolve(username == password);
+            return result.promise;
+        };
+
+        var loginHandler = (_screenParams.loginHandler?_screenParams.loginHandler : defaultLoginHandler);
 
         $scope.doLogin = function() {
-            console.log($scope.login.username);
             if ($scope.attemptsLeft>0) {
-                //Validate username and password (if needed)
 
-                if (!($scope.checkField(_screenParams.usernameValidation, $scope.login.username))) {
-                    $scope.showPopup('login_invalid_username');
+                //Validate username and password (if needed)     
+                if (!$scope.formValidated()) {
                     return; 
                 }
-                if (!($scope.checkField(_screenParams.passwordValidation, $scope.login.password))) {
-                    $scope.showPopup('login_invalid_password');
-                    return; 
-                }
+            
 
                 $injector.invoke(loginHandler, null, { username: $scope.login.username, password: $scope.login.password })
                     .then(function(result){
@@ -74,12 +84,16 @@ angular.module('sgb-screen-login', ['megazord'])
                         }
                         else {
                             $scope.attemptsLeft--;
-                            var msg = ($scope.attemptsLeft?'login_invalid_credentials':'login_attempts_reached'); 
-                            if ($scope._screenParams.showPopup) {
-                                $scope.showPopup(msg);
-                            } else {
+                            $scope.resetForm(); 
+                            if ($scope.attemptsLeft > 0) {
                                 _router.fireEvent({
                                     name: 'loginFailed', 
+                                    params: {}
+                                });
+                            } else {
+                                $scope.resetForm();  
+                                _router.fireEvent({
+                                    name: 'loginBlocked', 
                                     params: {}
                                 });
                             }
@@ -87,15 +101,12 @@ angular.module('sgb-screen-login', ['megazord'])
                     });
 
             } else { 
-
-                if ($scope._screenParams.showPopup) {
-                    $scope.showPopup('login_blocked');
-                } else {
-                    _router.fireEvent({
-                        name: 'loginBlocked', 
-                        params: {}
-                    });
-                }
+                $scope.resetForm(); 
+                _router.fireEvent({
+                    name: 'loginBlocked', 
+                    params: {}
+                });
+        
             }
         };
 
