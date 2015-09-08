@@ -7,15 +7,13 @@
 
 		<div class="push-content">
 		    <!--Welcome image-->
-		    <div class="text-center welcome-background" ng-show="data.welcomeMessage">
+		    <div class="text-center padding" ng-show="data.welcomeMessage" style="margin-bottom: 2em">
 		        <h3 class="thick"> {{data.welcomeMessage}} </h3>
 		    </div> 
 
-		    <hr class="separator"/>
-
 		    <!-- Login input -->
-		    <div class="dark-background text-center">
-		        <p class="pull-text" ng-show="data.infoMessage"> {{data.infoMessage}}</p>
+		    <div class="main-background text-center">
+
 		        <!-- Username -->
 		        <div class="row item-input app-input pwd-background item-icon-right"> 
 		            <div class="col col-offset-20 col-75">
@@ -43,7 +41,7 @@
 		        <div class="row app-input login-button-background "
 		               data-ng-click="doLogin()">
 		            <div class="col col-80 text-right">
-		               <p style="margin-top:0.2em"> {{'login_login' | translate}} </p>
+		               <p style="margin-top:0.3em"> {{'login_login' | translate}} </p>
 		            </div>  
 		        </div>
 		   
@@ -56,7 +54,7 @@
 		        </div>
 
 		        <!--Optional forgot password -->
-		        <div class="center-text forgotpwd-text" ng-show="_screenParams.forgotPassword">
+		        <div class="center-text forgotpwd-text" ng-show="_screenParams.forgotPassword" style="margin-top:2em">
 		            <p class="wrap" ng-click="forgotPass()"> {{'login_forgot_password' | translate}} </p>
 		        </div>
 		      
@@ -70,11 +68,6 @@
 		                </div>
 		            </div>
 		        </div>
-
-		        <!-- signup footer -->
-		        <div class="center-text signup-background" ng-show = "data.signUpMessage">
-		            <p class="thick wrap"> {{data.signUpMessage }} </p>
-		        </div> 
 
 		    </div> 
 		</div>

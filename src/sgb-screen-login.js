@@ -119,6 +119,15 @@ angular.module('sgb-screen-login', ['megazord'])
             );
         }
 
+        $scope.goTo = function(event) {
+            _router.fireEvent(
+                {
+                 name: event, 
+                 params: {}
+                }
+            );
+        }
+
     }]);
 
 
