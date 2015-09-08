@@ -97,6 +97,10 @@ $main-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-logi
 	font-size: $icon-size; 
 }
 
+.opaque-button {
+	opacity: 0.3; 
+}
+
 /* Password and input text color */
 
 input[type="text"], input[type="password"] {
@@ -116,3 +120,4 @@ input[type="text"], input[type="password"] {
 :-ms-input-placeholder {  
 	@include standard-placeholder($placeholder-color);
 }
+

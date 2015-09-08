@@ -38,8 +38,8 @@
 		        <br/>
 		  
 		        <!-- Login button -->    
-		        <div class="row app-input login-button-background "
-		               data-ng-click="doLogin()">
+		        <div class="row app-input login-button-background" data-ng-click="doLogin()"
+		             ng-class="{'opaque-button' : !formValidated() && _screenParams.onScreenValidation}">
 		            <div class="col col-80 text-right">
 		               <p style="margin-top:0.3em"> {{'login_login' | translate}} </p>
 		            </div>  
