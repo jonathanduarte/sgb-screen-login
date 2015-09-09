@@ -8,7 +8,7 @@ angular.module('sgb-screen-login', ['megazord'])
         $scope.data = $stateParams.data; 
         $scope.login = {
             username: '',
-            passsword: ''
+            password: ''
         };
         $scope.attemptsLeft = (_screenParams.maxAttempts?_screenParams.maxAttempts : 3); 
 
