@@ -113,7 +113,7 @@ input[type="text"], input[type="password"] {
   	@include standard-placeholder($placeholder-color);
 }
 
-::-moz-placeholder {  /* Firefox 19+ */
+::-moz-placeholder {  /* Firefox 19+ 
 	@include standard-placeholder($placeholder-color);
 }
 
