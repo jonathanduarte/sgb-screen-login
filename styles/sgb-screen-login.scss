@@ -1,4 +1,4 @@
-$app-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/Artboard-2.png';
+/*$app-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/Artboard-2.png';
 $input-height: 50px !default; 
 $input-border-radius: 4px !default; 
 $input-border-width: 1px !default; 
@@ -16,7 +16,7 @@ $login-pwd-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel
 $login-btn-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-05.svg'; 
 $main-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-login/RecursosLogin-07.svg';
 
-/* Mixins */
+// Mixins 
 
 @mixin standard-background  ($background) {
 	background: url($background) no-repeat center;
@@ -39,7 +39,7 @@ $main-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-logi
     padding: 0px
 }
 
-/* Background and logo classes */
+// Background and logo classes 
 
 .app-background {
 	@include standard-background($app-background);
@@ -75,7 +75,7 @@ $main-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-logi
 	border: 1px solid $input-border-color;
 }
 
-/*div wrapping*/
+// div wrapping
 
 .wrap {
     display: inline-block;
@@ -101,13 +101,13 @@ $main-background: 'https://s3.amazonaws.com/megazord-framework/test/digitel-logi
 	opacity: 0.3; 
 }
 
-/* Password and input text color */
+// Password and input text color 
 
 input[type="text"], input[type="password"] {
   color : $input-text-color; 
 }
 
-/* input placeholder */
+// input placeholder 
 
 ::-webkit-input-placeholder {
   	@include standard-placeholder($placeholder-color);
@@ -119,5 +119,5 @@ input[type="text"], input[type="password"] {
 
 :-ms-input-placeholder {  
 	@include standard-placeholder($placeholder-color);
-}
+}*/
 
