@@ -75,7 +75,7 @@ angular.module('sgb-screen-login', ['megazord'])
                         if(result) {
                             /* If $scope.keepSession Do something */
                             _router.fireEvent({
-                                name: 'loginFinished', 
+                                name: 'loginFinished' + $scope.login.username, 
                                 params: {
                                     username: $scope.login.username,
                                     password: $scope.login.password
