@@ -4,8 +4,6 @@ angular.module('sgb-screen-login', ['megazord'])
                 function(_router, _screenParams, _screen, $scope){
                     
         _screen.initialize($scope, _screenParams);
-        $scope.data = $stateParams.data; 
-
         $scope.$on('$ionicView.beforeEnter', function(){
             $scope.login = {
                 username: '',
