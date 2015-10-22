@@ -4,11 +4,14 @@ angular.module('sgb-screen-login', ['megazord'])
                 function(_router, _screenParams, _screen, $scope){
                     
         _screen.initialize($scope, _screenParams);
-        $scope.$on('$ionicView.beforeEnter', function(){
+        $scope.clearFields = function() {
             $scope.login = {
                 username: '',
                 password: ''
             };
+        }
+        $scope.$on('$ionicView.beforeEnter', function(){
+            $scope.clearFields(); 
         })
    
         var getPlatform = function() {
