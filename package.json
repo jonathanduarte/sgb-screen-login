@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/SYNERGY-GB/sgb-screen-login",
   "devDependencies": {
-  "megazord-sdk": "git+ssh://git@github.com:SYNERGY-GB/megazord-sdk.git#1.0"
+  "megazord-sdk": "git+ssh://git@github.com:SYNERGY-GB/megazord-sdk.git#1.2"
   }
 }
