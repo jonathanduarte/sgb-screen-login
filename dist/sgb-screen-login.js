@@ -16,6 +16,10 @@ angular.module('sgb-screen-login', ['megazord'])
             $scope.clearFields(); 
         })
 
+        $scope.$on('cleanLoginFields', function(){
+            $scope.clearFields(); 
+        })
+
         $scope.$on('$ionicView.loaded', function() {
             if ($scope.params.triggerAnimation) {
                 $timeout(function() {
