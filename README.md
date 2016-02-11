@@ -21,9 +21,8 @@ Como se trata de una pantalla de inicio de sesión, las validaciones pueden camb
 - **maxAttempts**: número máximo de intentos que tiene el usuario para iniciar sesión
 - **loginHandler**: en caso de que se necesite un manejador de sesión muy especifico, sino se utilizará un manejador por defecto. 
 - **templateType**: función o nombre que permita identificar el template a utilizar para la pantalla
-- **forgotPassword**: Booleano que indica si se quiere dar la opción al usuario de recuperar su contraseña
 - **clearSubmitButtons**: Booleano que indica si se quiere colocar un botón para limpiar los campos
-- **rememberMe** : Booleano que indica si se quiere colocar un toggle para que el usuario pueda mantener su sesión
+- **welcomeResource**: imagen de bienvenida ubicada en la parte superior del cuadro de login
 
 <h3> Diseño </h3>
 
