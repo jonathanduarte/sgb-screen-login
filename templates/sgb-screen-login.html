@@ -1,32 +1,32 @@
-<ion-view mz-screen view-title="{{ _screenParams.title | translate }}">
-    <ion-content>
+<ion-view mz-screen view-title="{{ params.title | translate }}">
+    <ion-content class="backgroundLogin">
         <!--Welcome image-->
-	    <img ng-src="{{_screenParams.welcomeResource}}" class="welcome-image full-image">
-		<div class="push-content">
+	    <img ng-src="{{params.welcomeResource}}" class="welcome-image full-image">
+		<div class="contentForm">
 		<div class="input-background">
 	       <form novalidate name="userForm">
-		        <div class="item-input item-icon-right"> 
-	                <input type="text" data-ng-model="login.username" name="username" required ng-pattern"_screenParams.usernameValidation" placeholder="{{'login_username' | translate}}" /> 
+		        <div class="item-input item-icon-right paddingLogin"> 
+	                <input id="styleInputLogin" type="text" data-ng-model="login.username" name="username" required ng-pattern"params.usernameValidation" placeholder="{{'login_username' | translate}}" /> 
 	   				<i class="icon ion-checkmark" ng-show="userForm.username.$valid"></i>
 	                <i class="icon ion-close-round" ng-show="userForm.username.$invalid && !userForm.username.$error.required"></i>
 		        </div>
 		        <!-- Password -->
-		        <div class="item-input app-input item-icon-right" >
-	                <input type="password" data-ng-model="login.password" name="password" required ng-pattern="_screenParams.passwordValidation" placeholder="{{'login_password' | translate}}" />
+		        <div class="item-input app-input item-icon-right paddingLogin">
+	                <input id="styleInputLogin" type="password" data-ng-model="login.password" name="password" required ng-pattern="params.passwordValidation" placeholder="{{'login_password' | translate}}" />
 	  				<i class="icon ion-checkmark" ng-show="userForm.password.$valid"></i>
 	                <i class="icon ion-close-round" ng-show="userForm.password.$invalid && !userForm.password.$error.required"></i>
 		        </div>
 		    </form>
 		    <!--buttons-->    
-		        <div class="row">
-			        <div class="col col-50"> 
-				        <div class="button"  data-ng-click="clearFields()">
-				            <p>{{'login_clean' | translate}}</p>
+		        <div class="row rowLoginPosition">
+			        <div class="col col-50 buttonLogin1"> 
+				        <div class="button buttonLogin button-positive" data-ng-click="clearFields()">
+				            <p>{{'Clean' | translate}}</p>
 			        	</div>
 		        	</div>
-		        	<div class="col col-50"> 
-			        	<div class="button"  data-ng-click="userForm.$valid  	&& doLogin()">
-			               <p>{{'login_submit' | translate}}</p> 
+		        	<div class="col col-50 buttonLogin2"> 
+			        	<div class="button buttonLogin button-balanced" data-ng-click="userForm.$valid  	&& doLogin()">
+			               <p>{{'Submit' | translate}}</p> 
 				    	</div>
 		    		</div>
 		    	</div>	
@@ -34,5 +34,5 @@
 		</div>
     </ion-content>
 
-	<!--<img ng-src="{{_screenParams.companyResource}}" class="fix-content-bottom company-logo"/>-->
+	<img ng-src="{{params.companyResource}}" class="fix-content-bottom company-logo"/>
 </ion-view>

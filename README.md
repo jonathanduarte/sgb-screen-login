@@ -4,13 +4,6 @@
 
 Esta pantalla sirve para controlar el ingreso de los usuarios a una aplicación.
 
-<h3>Datos esperados</h3>
-
-- **infoMessage** : Mensaje al usuario
-- **welcomeMessage**: Mensaje de bienvenida a la aplicación
-- **signUpMessage**: String que da la opción de registrarse, el string se mostraŕa y tambien otorgará la funcionalidad
-- **screenTitle**: Título de la pantalla 
-
 <h3>Parametros de la pantalla</h3>
 
 Como se trata de una pantalla de inicio de sesión, las validaciones pueden cambiar entre cada aplicación, por lo tanto, estas validaciones se encuentran parametrizadas para que puedan cambiar dependiendo de los requerimientos. La configuración debe recibirse en los parámetros de la pantalla
@@ -24,6 +17,20 @@ Como se trata de una pantalla de inicio de sesión, las validaciones pueden camb
 - **clearSubmitButtons**: Booleano que indica si se quiere colocar un botón para limpiar los campos
 - **welcomeResource**: imagen de bienvenida ubicada en la parte superior del cuadro de login
 
-<h3> Diseño </h3>
+<h3>Ejemplo de configuracion del archivo screen.ts</h3>
+<pre>
+"login": {
+    type: 'sgb-screen-login',
+    default: true,
+    params: {
+        title:"Hello there! I'm login",
+        onScreenValidation:true,
+        usernameValidation:"Synergy-GB",
+        passwordValidation:"1234",
+        clearSubmitButtons: true
+    }
+}
+</pre>
 
+<h3> Diseño </h3>
 ![Alt Text](https://s3.amazonaws.com/megazord-framework/balsamiq+mockups/sgb-screen-login.png)
