@@ -6,7 +6,7 @@
 		<div class="input-background">
 	       <form novalidate name="userForm">
 		        <div class="item-input item-icon-right paddingLogin"> 
-	                <input id="styleInputLogin" type="text" data-ng-model="login.username" name="username" required ng-pattern"params.usernameValidation" placeholder="{{'login_username' | translate}}" /> 
+	                <input id="styleInputLogin" type="text" data-ng-model="login.username" name="username" required ng-pattern="params.usernameValidation" placeholder="{{'login_username' | translate}}" /> 
 	   				<i class="icon ion-checkmark" ng-show="userForm.username.$valid"></i>
 	                <i class="icon ion-close-round" ng-show="userForm.username.$invalid && !userForm.username.$error.required"></i>
 		        </div>
